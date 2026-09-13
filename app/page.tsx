@@ -89,9 +89,8 @@ export default function Home() {
               The student club for Digital Enterprise Management at UTM.
             </p>
             <p className="mt-6 max-w-lg text-lg font-light leading-relaxed text-neutral-600">
-              Digital Enterprise Management Association is the student club for
-              Digital Enterprise Management at UTM. In 2024, DEMA received the
-              2023-2024 Club Excellence Award.
+              DEMA is the student club for Digital Enterprise Management at UTM.
+              In 2024, DEMA received the 2023-2024 Club Excellence Award.
             </p>
             <div className="mt-12 flex flex-wrap gap-4">
               <a

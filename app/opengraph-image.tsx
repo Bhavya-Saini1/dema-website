@@ -13,33 +13,78 @@ export default function OpenGraphImage() {
           height: "100%",
           display: "flex",
           flexDirection: "column",
-          justifyContent: "space-between",
-          background: "#1A3A5C",
+          alignItems: "center",
+          justifyContent: "center",
+          background: "#DF3D2C",
           color: "#FAFAFA",
-          padding: 72,
+          gap: 28,
         }}
       >
+        <svg
+          width="168"
+          height="160"
+          viewBox="4 0 42 40"
+          fill="none"
+        >
+          <rect
+            x="11.86"
+            y="15"
+            width="10"
+            height="10"
+            rx="2"
+            fill="#FAFAFA"
+            transform="rotate(45 16.86 20)"
+          />
+          <path
+            d="M20 4 L36 20 L20 36"
+            fill="none"
+            stroke="#FAFAFA"
+            strokeWidth="10"
+            strokeLinecap="butt"
+            strokeLinejoin="miter"
+            strokeMiterlimit="8"
+          />
+        </svg>
+
         <div
           style={{
             display: "flex",
+            flexDirection: "row",
             alignItems: "center",
-            justifyContent: "center",
-            width: 88,
-            height: 88,
-            background: "#DF3D2C",
-            fontSize: 36,
+            gap: 10,
+            fontSize: 96,
             fontWeight: 700,
+            letterSpacing: "0.18em",
+            lineHeight: 1,
           }}
         >
-          D
+          <span>D</span>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "space-between",
+              height: 64,
+              width: 44,
+            }}
+          >
+            <div style={{ height: 8, width: "100%", background: "#FAFAFA" }} />
+            <div style={{ height: 8, width: "100%", background: "#FAFAFA" }} />
+            <div style={{ height: 8, width: "100%", background: "#FAFAFA" }} />
+          </div>
+          <span>M</span>
         </div>
-        <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
-          <div style={{ fontSize: 64, fontWeight: 700, letterSpacing: "-0.03em" }}>
-            DEMA
-          </div>
-          <div style={{ fontSize: 28, fontWeight: 300, maxWidth: 800 }}>
-            Digital Enterprise Management Association at UTM
-          </div>
+
+        <div
+          style={{
+            marginTop: 12,
+            fontSize: 28,
+            fontWeight: 400,
+            letterSpacing: "0.06em",
+            opacity: 0.92,
+          }}
+        >
+          Digital Enterprise Management Association
         </div>
       </div>
     ),
