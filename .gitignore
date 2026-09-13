@@ -141,3 +141,13 @@ dist
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
 .vite/
+
+# AI / agent design docs and tooling (local only)
+DESIGN.md
+AGENTS.md
+CLAUDE.md
+.cursorrules
+.cursor/
+.claude/
+.github/copilot-instructions.md
+.github/instructions/

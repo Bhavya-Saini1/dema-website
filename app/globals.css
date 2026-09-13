@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  @apply bg-neutral-50 text-navy font-sans antialiased;
+}
+
+section[id] {
+  scroll-margin-top: 4rem;
+}
+
+a:focus-visible,
+button:focus-visible,
+summary:focus-visible {
+  outline: 2px solid #1a3a5c;
+  outline-offset: 3px;
+}
+
+.bg-red a:focus-visible,
+.bg-red button:focus-visible,
+header a:focus-visible,
+header button:focus-visible {
+  outline-color: #fafafa;
+}
+
+@layer utilities {
+  .clip-chevron-tr {
+    clip-path: polygon(
+      0 0,
+      calc(100% - 4rem) 0,
+      100% 4rem,
+      100% 100%,
+      0 100%
+    );
+  }
+}
