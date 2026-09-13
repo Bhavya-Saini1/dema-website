@@ -12,7 +12,4 @@ export const nextEvent = {
   imageAlt: "Speakers seated on stage at DEM Soiree",
   blurb:
     "Opening event of the year for Digital Enterprise Management. Students, faculty, and alumni.",
-  /** No dedicated ticket form yet; Instagram carries RSVP and event posts. */
-  rsvpHref: "https://www.instagram.com/demassociation/",
-  rsvpLabel: "RSVP on Instagram",
 } as const;

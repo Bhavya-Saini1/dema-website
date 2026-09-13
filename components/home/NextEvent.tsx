@@ -55,14 +55,6 @@ export default function NextEvent() {
         >
           Event details
         </Link>
-        <a
-          href={nextEvent.rsvpHref}
-          target="_blank"
-          rel="noreferrer"
-          className="mt-4 ml-3 inline-block rounded-none border border-navy bg-transparent px-4 py-2 font-mono text-xs font-bold uppercase tracking-widest text-navy transition-colors duration-150 hover:bg-navy hover:text-neutral-50"
-        >
-          {nextEvent.rsvpLabel}
-        </a>
       </div>
     </aside>
   );

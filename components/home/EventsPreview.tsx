@@ -67,13 +67,13 @@ export default function EventsPreview() {
                 08 APR 2026
               </time>
               <h3 className="mt-5 font-sans text-2xl font-bold leading-snug tracking-tight text-navy">
-                DESIGNATHON
+                DEM Case Competition
               </h3>
               <p className="mt-3 text-base font-light leading-relaxed text-navy">
-                With the Design Hub at CCT 2150, 10:00 AM to 4:00 PM. DEM
-                students competed in teams of 2 to 4. UTM community members
-                attended as general audience. ICCIT students volunteered on
-                logistics. Sign-up deadline was 25 Mar.
+                CCT 2150, 10:00 AM to 4:00 PM. DEM students competed in teams of
+                2 to 4. UTM community members attended as general audience.
+                ICCIT students volunteered on logistics. Sign-up deadline was 25
+                Mar.
               </p>
             </div>
           </article>

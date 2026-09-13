@@ -151,3 +151,5 @@ CLAUDE.md
 .claude/
 .github/copilot-instructions.md
 .github/instructions/
+.vercel/
+!.env.example
