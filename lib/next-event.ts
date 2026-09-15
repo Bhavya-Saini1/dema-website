@@ -9,7 +9,7 @@ export const nextEvent = {
   place: "The Blind Duck",
   roomHint: "UTM Student Centre",
   image: "/events/dem-soiree.jpg",
-  imageAlt: "Speakers seated on stage at DEM Soiree",
+  imageAlt: "Panel discussion on stage at DEM Soiree",
   blurb:
     "Opening event of the year for Digital Enterprise Management. Students, faculty, and alumni.",
 } as const;
