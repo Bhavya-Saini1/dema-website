@@ -1,15 +1,16 @@
 export const nextEvent = {
   slug: "dem-soiree",
   href: "/events/dem-soiree",
-  name: "DEM Soiree",
-  startsAt: "2026-09-30T18:00:00-04:00",
+  name: "DEM Soirée",
+  startsAt: "2026-09-30T19:00:00-04:00",
   dateLabel: "30 SEP 2026",
   weekdayLabel: "Wednesday",
-  timeLabel: "6:00 PM",
+  timeLabel: "7:00 PM",
   place: "The Blind Duck",
   roomHint: "UTM Student Centre",
   image: "/events/dem-soiree.jpg",
-  imageAlt: "Panel discussion on stage at DEM Soiree",
+  imageAlt: "Students and speakers gathered at DEM Soirée",
   blurb:
-    "Opening event of the year for Digital Enterprise Management. Students, faculty, and alumni.",
+    "Opening night of the year. Free food, networking, and a look at DEMA for 2026–2027. Open to all UTM students.",
+  rsvpHref: "https://forms.gle/zrxe7rM57Rm2ECs67",
 } as const;

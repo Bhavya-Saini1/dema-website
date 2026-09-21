@@ -49,12 +49,22 @@ export default function NextEvent() {
         <p className="mt-1 text-sm font-light text-navy">
           {nextEvent.place} · {nextEvent.timeLabel}
         </p>
-        <Link
-          href={nextEvent.href}
-          className="mt-4 inline-block rounded-none border border-red bg-red px-4 py-2 font-mono text-xs font-bold uppercase tracking-widest text-neutral-50 transition-colors duration-150 hover:border-red-dark hover:bg-red-dark"
-        >
-          Event details
-        </Link>
+        <div className="mt-4 flex flex-wrap gap-2">
+          <a
+            href={nextEvent.rsvpHref}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-block rounded-none border border-red bg-red px-4 py-2 font-mono text-xs font-bold uppercase tracking-widest text-neutral-50 transition-colors duration-150 hover:border-red-dark hover:bg-red-dark"
+          >
+            RSVP
+          </a>
+          <Link
+            href={nextEvent.href}
+            className="inline-block rounded-none border border-navy px-4 py-2 font-mono text-xs font-bold uppercase tracking-widest text-navy transition-colors duration-150 hover:border-red hover:text-red"
+          >
+            Details
+          </Link>
+        </div>
       </div>
     </aside>
   );

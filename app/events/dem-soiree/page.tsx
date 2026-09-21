@@ -8,7 +8,7 @@ import { nextEvent } from "@/lib/next-event";
 export const metadata: Metadata = {
   title: nextEvent.name,
   description:
-    "Opening event of the year for Digital Enterprise Management at UTM. Students, faculty, and alumni.",
+    "DEMA Soirée 2026 at The Blind Duck. Free admission, food, and networking with students and industry. Doors 6:40 PM, Wednesday 30 September. Open to all UTM students.",
 };
 
 export default function DemSoireePage() {
@@ -29,15 +29,25 @@ export default function DemSoireePage() {
                 {nextEvent.name}
               </h1>
               <p className="mt-6 text-lg font-light leading-relaxed text-neutral-600">
-                First official event of the year. Digital Enterprise Management
-                students, faculty, and alumni. Networking and a meal. Wednesday
-                30 September at 6:00 PM at The Blind Duck. No TCard required.
+                Start the year with networking, free food, and a look at what
+                DEMA has planned for 2026–2027. Open to every UTM student, any
+                program. Bring friends. Wednesday 30 September. Doors at 6:40 PM
+                at The Blind Duck. Free admission. Space may be limited, so RSVP
+                first.
               </p>
+              <a
+                href={nextEvent.rsvpHref}
+                target="_blank"
+                rel="noreferrer"
+                className="mt-8 inline-block rounded-none border border-red bg-red px-6 py-3 font-mono text-xs font-bold uppercase tracking-widest text-neutral-50 transition-colors duration-150 hover:border-red-dark hover:bg-red-dark"
+              >
+                RSVP
+              </a>
             </div>
 
             <div className="border border-navy bg-neutral-50 p-6 lg:col-span-5">
               <p className="font-mono text-[0.65rem] font-bold uppercase tracking-[0.2em] text-red">
-                Until doors
+                Until start
               </p>
               <div className="mt-3">
                 <EventCountdown
@@ -97,10 +107,11 @@ export default function DemSoireePage() {
               What to expect
             </h2>
             <p className="mt-4 text-base font-light leading-relaxed text-navy">
-              DEM Soiree opens the year for Digital Enterprise Management.
-              Faculty, students, and alumni share one evening of conversation
-              over a meal. It is the first official DEMA event of the academic
-              year.
+              Meet the DEMA team and other UTM students. Hear from guests, then
+              network with industry people from companies including Microsoft,
+              Amazon, and EY. Get a preview of TechTrack and the Youth
+              Entrepreneurship Conference, and how to get involved this year.
+              Food and refreshments provided.
             </p>
           </div>
           <div className="lg:col-span-5 lg:col-start-8">
@@ -109,12 +120,20 @@ export default function DemSoireePage() {
             </h2>
             <ul className="mt-4 space-y-3 text-base font-light text-navy">
               <li className="border-l-2 border-red pl-4">
-                Wednesday 30 September · 6:00 PM
+                Wednesday 30 September · doors 6:40 PM
               </li>
               <li className="border-l-2 border-navy pl-4">
                 The Blind Duck · UTM Student Centre
               </li>
-              <li className="border-l-2 border-navy pl-4">No TCard needed</li>
+              <li className="border-l-2 border-navy pl-4">
+                Free admission · food and refreshments
+              </li>
+              <li className="border-l-2 border-navy pl-4">
+                Open to all UTM students, any program
+              </li>
+              <li className="border-l-2 border-navy pl-4">
+                Space may be limited · RSVP in advance
+              </li>
             </ul>
           </div>
         </div>
