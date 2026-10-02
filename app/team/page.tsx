@@ -106,6 +106,19 @@ export default function TeamPage() {
             {teamYear} executive. Thirteen offices.
           </p>
 
+          <div className="mt-10 overflow-hidden border border-navy/20 bg-neutral-100">
+            <div className="relative aspect-[16/9] w-full">
+              <Image
+                src="/team/group-photo.jpg"
+                alt="DEMA team group photo"
+                fill
+                priority
+                className="object-cover"
+                sizes="(min-width: 1280px) 1200px, 100vw"
+              />
+            </div>
+          </div>
+
           <ul className="mt-14 grid grid-cols-1 gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
             {featured.map((member, index) => (
               <li key={member.id}>

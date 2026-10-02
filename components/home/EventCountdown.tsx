@@ -63,7 +63,7 @@ export default function EventCountdown({
   const remaining = new Date(startsAt).getTime() - now;
 
   if (remaining <= 0) {
-    return <p className={typeClass}>Doors are open</p>;
+    return <p className={typeClass}>Event recap soon!</p>;
   }
 
   const { days, hours, minutes, seconds } = splitRemaining(remaining);

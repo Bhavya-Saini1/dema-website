@@ -85,7 +85,7 @@ export const team: TeamMember[] = [
     id: "research-innovation",
     role: "Research and Innovation Director",
     name: "Masooma Jaffry",
-    image: null,
+    image: "/team/masooma.jpg",
     linkedin: "https://www.linkedin.com/in/masooma-jaffry-4a56b7238",
   },
   {
