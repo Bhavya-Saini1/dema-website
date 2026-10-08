@@ -41,43 +41,72 @@ export default function JoinSection() {
 
         <div className="border-t border-navy/20 pt-8 lg:col-span-12">
           <div className="grid grid-cols-1 gap-6 lg:grid-cols-12 lg:items-end lg:gap-8">
-            <div className="lg:col-span-8">
-              <p className="font-mono text-[0.65rem] font-bold uppercase tracking-[0.18em] text-neutral-500">
-                Closed
-              </p>
-              <h3 className="mt-3 font-sans text-3xl font-bold leading-snug text-navy md:text-4xl">
-                Associate
-              </h3>
-              <p className="mt-4 max-w-xl text-base font-light leading-relaxed text-navy">
-                Hiring for the 2026-2027 team. This form is closed. Watch{" "}
-                <a
-                  href={social.instagram}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="font-bold text-navy underline decoration-navy/30 underline-offset-2 transition-colors duration-150 hover:text-red hover:decoration-red"
-                >
-                  Instagram
-                </a>{" "}
-                and{" "}
-                <a
-                  href={social.linkedin}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="font-bold text-navy underline decoration-navy/30 underline-offset-2 transition-colors duration-150 hover:text-red hover:decoration-red"
-                >
-                  LinkedIn
-                </a>{" "}
-                for the next round.
-              </p>
-            </div>
-            <div className="lg:col-span-4 lg:flex lg:justify-end lg:pb-1">
-              <span
-                aria-disabled="true"
-                className="inline-block rounded-none border border-navy/30 px-6 py-3 font-mono text-xs font-bold uppercase tracking-widest text-neutral-500"
-              >
-                Applications closed
-              </span>
-            </div>
+            {membership.associateOpen ? (
+              <>
+                <div className="lg:col-span-8">
+                  <p className="font-mono text-[0.65rem] font-bold uppercase tracking-[0.18em] text-red">
+                    Open · Round 2
+                  </p>
+                  <h3 className="mt-3 font-sans text-3xl font-bold leading-snug text-navy md:text-4xl">
+                    Associate
+                  </h3>
+                  <p className="mt-4 max-w-xl text-base font-light leading-relaxed text-navy">
+                    Round 2 hiring for the 2026-2027 team, with roles across
+                    several departments.
+                  </p>
+                </div>
+                <div className="lg:col-span-4 lg:flex lg:justify-end lg:pb-1">
+                  <a
+                    href={membership.associateHref}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-block rounded-none border border-red bg-red px-6 py-3 font-mono text-xs font-bold uppercase tracking-widest text-neutral-50 transition-colors duration-150 hover:border-red-dark hover:bg-red-dark"
+                  >
+                    Apply for Round 2
+                  </a>
+                </div>
+              </>
+            ) : (
+              <>
+                <div className="lg:col-span-8">
+                  <p className="font-mono text-[0.65rem] font-bold uppercase tracking-[0.18em] text-neutral-500">
+                    Closed
+                  </p>
+                  <h3 className="mt-3 font-sans text-3xl font-bold leading-snug text-navy md:text-4xl">
+                    Associate
+                  </h3>
+                  <p className="mt-4 max-w-xl text-base font-light leading-relaxed text-navy">
+                    Hiring for the 2026-2027 team. This form is closed. Watch{" "}
+                    <a
+                      href={social.instagram}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="font-bold text-navy underline decoration-navy/30 underline-offset-2 transition-colors duration-150 hover:text-red hover:decoration-red"
+                    >
+                      Instagram
+                    </a>{" "}
+                    and{" "}
+                    <a
+                      href={social.linkedin}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="font-bold text-navy underline decoration-navy/30 underline-offset-2 transition-colors duration-150 hover:text-red hover:decoration-red"
+                    >
+                      LinkedIn
+                    </a>{" "}
+                    for the next round.
+                  </p>
+                </div>
+                <div className="lg:col-span-4 lg:flex lg:justify-end lg:pb-1">
+                  <span
+                    aria-disabled="true"
+                    className="inline-block rounded-none border border-navy/30 px-6 py-3 font-mono text-xs font-bold uppercase tracking-widest text-neutral-500"
+                  >
+                    Applications closed
+                  </span>
+                </div>
+              </>
+            )}
           </div>
         </div>
       </div>

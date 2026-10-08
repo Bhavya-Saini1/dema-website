@@ -1,5 +1,7 @@
 import Image from "next/image";
+import Link from "next/link";
 import ParallaxMedia from "@/components/ui/ParallaxMedia";
+import { demSoiree } from "@/lib/next-event";
 
 export default function EventsPreview() {
   return (
@@ -12,8 +14,8 @@ export default function EventsPreview() {
         <article className="relative min-h-[28rem] overflow-hidden rounded-none border border-navy lg:col-span-7 lg:min-h-[36rem]">
           <ParallaxMedia className="absolute inset-0" cover>
             <Image
-              src="/events/deerfield-lecture.jpg"
-              alt="TechTrack lecture in Deerfield Hall"
+              src={demSoiree.image}
+              alt={demSoiree.imageAlt}
               fill
               sizes="(min-width: 1024px) 58vw, 100vw"
               className="rounded-none object-cover"
@@ -21,39 +23,42 @@ export default function EventsPreview() {
           </ParallaxMedia>
           <div className="absolute inset-x-0 bottom-0 z-10 rounded-none bg-[#1A3A5C]/80 p-8 md:p-10">
             <time
-              dateTime="2026-02-04"
+              dateTime="2026-09-30"
               className="inline-block rounded-none border border-neutral-50 px-3 py-1 font-mono text-xs font-bold tracking-widest text-neutral-50"
             >
-              04 FEB 2026
+              {demSoiree.dateLabel}
             </time>
             <h3 className="mt-6 font-sans text-3xl font-bold leading-tight tracking-tight text-neutral-50 md:text-4xl">
-              TechTrack 2026
+              {demSoiree.name}
             </h3>
             <p className="mt-4 max-w-lg text-base font-light leading-relaxed text-neutral-50">
-              Hosted by DEMA with ISACA Toronto Chapter, Seneca Polytechnic,
-              Toronto Metropolitan University, and York University. Cybersecurity,
-              cloud, analytics, and governance, with industry speakers and
-              networking.
+              {demSoiree.blurb}
             </p>
+            <Link
+              href={demSoiree.href}
+              className="mt-6 inline-block rounded-none border border-neutral-50 px-4 py-2 font-mono text-xs font-bold uppercase tracking-widest text-neutral-50 transition-colors duration-150 hover:border-red hover:bg-red"
+            >
+              Details
+            </Link>
           </div>
         </article>
 
         <div className="flex flex-col gap-8 lg:col-span-5 lg:h-full">
           <article className="flex flex-1 flex-col rounded-none border border-navy bg-[#1A3A5C] p-8 text-neutral-50">
             <time
-              dateTime="2026-03-28"
+              dateTime="2026-02-04"
               className="font-mono text-xs font-bold tracking-widest text-neutral-50"
             >
-              28 MAR 2026
+              04 FEB 2026
             </time>
             <h3 className="mt-5 font-sans text-2xl font-bold leading-snug tracking-tight">
-              McMaster Marketing Summit
+              TechTrack 2026
             </h3>
             <p className="mt-3 text-base font-light leading-relaxed">
-              With the DeGroote Marketing Association. TED-style keynotes,
-              workshops, and industry networking at McMaster&apos;s Peter George
-              Centre, 9:00 AM to 3:00 PM. Merch, breakfast, and lunch included.
-              Guided bussing from UTM. Registration closed 25 Mar.
+              Hosted by DEMA with ISACA Toronto Chapter, Seneca Polytechnic,
+              Toronto Metropolitan University, and York University. Cybersecurity,
+              cloud, analytics, and governance, with industry speakers and
+              networking.
             </p>
           </article>
 
@@ -70,8 +75,8 @@ export default function EventsPreview() {
                 DEM Case Competition
               </h3>
               <p className="mt-3 text-base font-light leading-relaxed text-navy">
-                CCT 2150, 10:00 AM to 4:00 PM. DEM students competed in teams of
-                2 to 4. UTM community members attended as general audience.
+                CCT 2150, 10:00 AM to 4:00 PM. DEM students competed in teams
+                of 2 to 4. UTM community members attended as general audience.
                 ICCIT students volunteered on logistics. Sign-up deadline was 25
                 Mar.
               </p>

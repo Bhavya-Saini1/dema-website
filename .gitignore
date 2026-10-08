@@ -152,4 +152,7 @@ CLAUDE.md
 .github/copilot-instructions.md
 .github/instructions/
 .vercel/
+soiree-website-announcement-speech.md
+demo-video/
+.DS_Store
 !.env.example

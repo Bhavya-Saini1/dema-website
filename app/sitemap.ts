@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 import { articles } from "@/lib/articles";
-import { nextEvent } from "@/lib/next-event";
+import { demSoiree, nextEvent } from "@/lib/next-event";
 import { siteUrl } from "@/lib/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -29,6 +29,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
       changeFrequency: "weekly",
       priority: 0.9,
+    },
+    {
+      url: `${siteUrl}${demSoiree.href}`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.6,
     },
     ...articleEntries,
   ];
