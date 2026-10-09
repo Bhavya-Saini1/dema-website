@@ -32,7 +32,7 @@ function mainTitle() {
         </p>
       </div>
       <div className="flex flex-wrap items-baseline mt-2 w-full "> 
-        <p className="w-full text-sm text-left font-bold text-neutral-150 ">
+        <p className="w-full text-sm text-left font-bold font-sans text-neutral-150 ">
           Digital Enterprise Management Association. University of Toronto Mississauga.
         </p>
       </div>
@@ -43,7 +43,7 @@ function mainTitle() {
 function siteMapLinks() {
   return (
     <nav
-      className=" hidden lg:block lg:col-start-3   "
+      className=" hidden font-sans lg:block lg:mt-2.5 lg:col-start-3   "
       aria-label="Footer"
     >
       <p className=" font-bold text-xl text-neutral-50">
@@ -54,7 +54,7 @@ function siteMapLinks() {
           <li key={link.href} className="flex">
             <Link
               href={link.href}
-              className="inline-flex items-center text-center text-sm font-bold tracking-widest text-neutral-50 transition-transform duration-200 hover:-translate-y-1"
+              className="inline-flex items-center text-center text-sm font-bold text-neutral-50 transition-transform duration-200 hover:-translate-y-1"
             >
               {link.label}
             </Link>
@@ -67,7 +67,7 @@ function siteMapLinks() {
 
 function socialMediaLinks() {
   return (
-    <div className="pb-5 lg:ml-5 items-end lg:-ml-3">
+    <div className="pb-5 lg:ml-5 lg:mt-2.5 items-end lg:-ml-3">
       <p className="hidden font-bold text-xl uppercasetext-neutral-50 lg:block">
         Socials
       </p>
@@ -82,7 +82,7 @@ function socialMediaLinks() {
               className="inline-flex items-center gap-2 transition-transform duration-200 hover:-translate-y-1"
             >
               {link.icon}
-              <span className="hidden mt-1 font-bold text-neutral-100 lg:inline">{link.label}</span>
+              <span className="hidden mt-1 font-sans font-bold text-neutral-100 lg:inline">{link.label}</span>
             </a>
           </li>
         ))}
