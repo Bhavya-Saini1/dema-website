@@ -12,8 +12,8 @@ const config: Config = {
       current: "currentColor",
       inherit: "inherit",
       red: {
-        DEFAULT: "#DF3D2C",
-        dark: "#B5301F",
+        DEFAULT: "#f43924", // original- DF3D2C
+        dark: "#dc2b14",
       },
       navy: {
         DEFAULT: "#1A3A5C",
@@ -36,6 +36,7 @@ const config: Config = {
       fontFamily: {
         sans: ["var(--font-sans)", "ui-sans-serif", "system-ui", "sans-serif"],
         mono: ["var(--font-mono)", "ui-monospace", "SFMono-Regular", "monospace"],
+        footer: ["var(--font-roboto)", "sans-serif"],
       },
       keyframes: {
         marquee: {
