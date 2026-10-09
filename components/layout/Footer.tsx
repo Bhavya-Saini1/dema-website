@@ -27,7 +27,7 @@ function mainTitle() {
         <p className="font-sans text-lg font-semibold text-neutral-100">
           X {currentYear}-{nextYearShort}
         </p>
-        <p className="text-[0.65rem] font-bold uppercase tracking-[0.14em] text-neutral-200">
+        <p className="text-[0.65rem] font-bold uppercase tracking-[0.14em] text-neutral-150">
           © {currentYear} DEMA UTM
         </p>
       </div>
