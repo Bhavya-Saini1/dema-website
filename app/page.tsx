@@ -3,7 +3,8 @@ import EventsPreview from "@/components/home/EventsPreview";
 import JoinSection from "@/components/home/JoinSection";
 import NextEvent from "@/components/home/NextEvent";
 import { social } from "@/lib/social";
-
+import Hero from "@/components/home/hero";
+ 
 const MARQUEE_PHRASE = "BUSINESS • TECHNOLOGY • DESIGN • INNOVATION •";
 
 function InstagramIcon({ className }: { className?: string }) {
@@ -76,6 +77,8 @@ function MarqueeCopy() {
 export default function Home() {
   return (
     <main>
+      <Hero />
+
       <section className="px-6 py-24 md:px-12 lg:px-16 lg:py-32">
         <div className="mx-auto grid max-w-7xl grid-cols-1 items-start gap-16 lg:grid-cols-12 lg:gap-8">
           <header className="lg:col-span-7">
