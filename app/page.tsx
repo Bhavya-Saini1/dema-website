@@ -153,7 +153,7 @@ export default function Home() {
               professional practice at the University of Toronto Mississauga.
             </p>
             <a
-              href="/team"
+              href="/about"
               className="mt-10 inline-block rounded-none border border-red bg-red px-6 py-3 font-mono text-xs font-bold uppercase tracking-widest text-neutral-50 transition-colors duration-150 hover:border-red-dark hover:bg-red-dark"
             >
               MEET THE TEAM

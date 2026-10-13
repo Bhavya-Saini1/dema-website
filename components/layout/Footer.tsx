@@ -3,8 +3,7 @@ import { social } from "@/lib/social";
 import { FaInstagram, FaLinkedinIn } from "react-icons/fa";
 
 const FOOTER_LINKS = [
-  { href: "/#about", label: "About" },
-  { href: "/team", label: "Team" },
+  { href: "/about", label: "About" },
   { href: "/#events", label: "Events" },
   { href: "/#articles", label: "Articles" },
   { href: "/#join", label: "Join" },

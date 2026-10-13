@@ -1,9 +1,25 @@
+export type DepartmentId =
+  | "presidential"
+  | "vp-internal"
+  | "vp-external"
+  | "internal-events"
+  | "external-events"
+  | "finance-logistics"
+  | "marketing"
+  | "graphic-design"
+  | "pr-outreach"
+  | "research-innovation"
+  | "web-development"
+  | "human-resources"
+  | "yec";
+
 export type TeamMember = {
   id: string;
   role: string;
   name: string | null;
   image: string | null;
   linkedin: string | null;
+  department: DepartmentId;
   featured?: boolean;
   note?: string;
   /** CSS object-position for the headshot crop, e.g. "top" or "center 20%". */
@@ -21,6 +37,7 @@ export const team: TeamMember[] = [
     image: "/team/vaibhav.jpg",
     imagePosition: "top",
     linkedin: "https://www.linkedin.com/in/vaibhavkaushal24",
+    department: "presidential",
     featured: true,
   },
   {
@@ -29,6 +46,7 @@ export const team: TeamMember[] = [
     name: "Brayden Messier",
     image: "/team/brayden.jpg",
     linkedin: "https://www.linkedin.com/in/braydenmessier",
+    department: "vp-internal",
     featured: true,
   },
   {
@@ -37,6 +55,7 @@ export const team: TeamMember[] = [
     name: "Allina Malik",
     image: "/team/allina.jpg",
     linkedin: "https://www.linkedin.com/in/allina-malik-6318bb316",
+    department: "vp-external",
     featured: true,
   },
   {
@@ -45,6 +64,7 @@ export const team: TeamMember[] = [
     name: "Justin Prijadi",
     image: "/team/justin.jpg",
     linkedin: "https://www.linkedin.com/in/justinprijadi",
+    department: "internal-events",
   },
   {
     id: "external-events",
@@ -52,6 +72,7 @@ export const team: TeamMember[] = [
     name: "Maryam Majid",
     image: "/team/maryam.jpg",
     linkedin: "https://www.linkedin.com/in/maryam-majid24",
+    department: "external-events",
   },
   {
     id: "finance-logistics",
@@ -59,6 +80,7 @@ export const team: TeamMember[] = [
     name: "Rama Aleikish",
     image: "/team/rama.jpg",
     linkedin: "https://www.linkedin.com/in/ramaaleikish",
+    department: "finance-logistics",
   },
   {
     id: "marketing",
@@ -66,6 +88,7 @@ export const team: TeamMember[] = [
     name: "Avery Gaipo",
     image: "/team/avery.jpg",
     linkedin: "https://www.linkedin.com/in/avery-gaipo-154628386/",
+    department: "marketing",
   },
   {
     id: "graphic-design",
@@ -73,6 +96,7 @@ export const team: TeamMember[] = [
     name: "Ray Hajj-kasem",
     image: "/team/ray.jpg",
     linkedin: "https://www.linkedin.com/in/ray-hajj-kasem-53a8083b6",
+    department: "graphic-design",
   },
   {
     id: "pr-outreach",
@@ -80,6 +104,7 @@ export const team: TeamMember[] = [
     name: "Betsy Ng",
     image: "/team/betsy.jpg",
     linkedin: "https://www.linkedin.com/in/ng-betsy",
+    department: "pr-outreach",
   },
   {
     id: "research-innovation",
@@ -87,6 +112,7 @@ export const team: TeamMember[] = [
     name: "Masooma Jaffry",
     image: "/team/masooma.jpg",
     linkedin: "https://www.linkedin.com/in/masooma-jaffry-4a56b7238",
+    department: "research-innovation",
   },
   {
     id: "web-development",
@@ -94,6 +120,7 @@ export const team: TeamMember[] = [
     name: "Bhavya Saini",
     image: "/team/bhavya.jpg",
     linkedin: "https://www.linkedin.com/in/saini-bhavya",
+    department: "web-development",
   },
   {
     id: "human-resources",
@@ -101,6 +128,7 @@ export const team: TeamMember[] = [
     name: "Paris Wood",
     image: "/team/paris.jpg",
     linkedin: "https://www.linkedin.com/in/paris-wood-584a28289",
+    department: "human-resources",
   },
   {
     id: "yec-co-chair-aamna",
@@ -108,6 +136,7 @@ export const team: TeamMember[] = [
     name: "Aamna Saqib",
     image: "/team/aamna.jpg",
     linkedin: "https://www.linkedin.com/in/aamna-saqib",
+    department: "yec",
   },
   {
     id: "yec-co-chair-jennifer",
@@ -116,6 +145,7 @@ export const team: TeamMember[] = [
     image: "/team/jennifer.jpg",
     imagePosition: "center 20%",
     linkedin: "https://www.linkedin.com/in/nguyenjennifer06",
+    department: "yec",
   },
 ];
 
@@ -140,4 +170,8 @@ export function getFeaturedTeam() {
 
 export function getDirectorTeam() {
   return team.filter((member) => !member.featured);
+}
+
+export function getDepartmentTeam(department: DepartmentId) {
+  return team.filter((member) => member.department === department);
 }

@@ -7,10 +7,9 @@ import { useEffect, useId, useState } from "react";
 import { PiListBold } from "react-icons/pi";
 
 const NAV_ITEMS = [
-  { href: "/#about", label: "About" },
+  { href: "/about", label: "About" },
   { href: "/#events", label: "Events" },
   { href: "/#articles", label: "Articles" },
-  { href: "/team", label: "Team" },
   { href: "/#join", label: "Join" },
   { label: "Instagram", href: social.instagram },
   { label: "Linked In", href: social.linkedin },
@@ -48,14 +47,14 @@ function Nav() {
     return () => window.removeEventListener("hashchange", updateHash);
   }, []);
 
-  const activeLabel = pathname.startsWith("/team")
-    ? "Team"
+  const activeLabel = pathname.startsWith("/about")
+    ? "About"
     : pathname.startsWith("/events")
       ? "Events"
       : pathname.startsWith("/articles")
         ? "Articles"
         : pathname === "/"
-          ? NAV_ITEMS.find((item) => item.href === `/${hash}`)?.label ?? "About"
+          ? NAV_ITEMS.find((item) => item.href === `/${hash}`)?.label ?? null
           : null;
 
   return (
