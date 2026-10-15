@@ -3,10 +3,11 @@
 import Image from "next/image";
 import { social } from "@/lib/social";
 import { usePathname } from "next/navigation";
-import { useEffect, useId, useState } from "react";
+import { useEffect, useId, useState, useSyncExternalStore } from "react";
 import { PiListBold } from "react-icons/pi";
 
 const NAV_ITEMS = [
+  { href: "/#", label: "Home" },
   { href: "/#about", label: "About" },
   { href: "/#events", label: "Events" },
   { href: "/#articles", label: "Articles" },
@@ -39,24 +40,38 @@ export default function Navbar() {
 
 function Nav() {
   const pathname = usePathname();
-  const [hash, setHash] = useState("");
+  const hash = useSyncExternalStore(
+    (callback) => {
+      window.addEventListener("hashchange", callback);
+      return () => window.removeEventListener("hashchange", callback);
+    },
+    () => window.location.hash,
+    () => "",
+  );
 
-  useEffect(() => {
-    const updateHash = () => setHash(window.location.hash);
-    updateHash();
-    window.addEventListener("hashchange", updateHash);
-    return () => window.removeEventListener("hashchange", updateHash);
-  }, []);
-
-  const activeLabel = pathname.startsWith("/team")
-    ? "Team"
-    : pathname.startsWith("/events")
-      ? "Events"
-      : pathname.startsWith("/articles")
-        ? "Articles"
-        : pathname === "/"
-          ? NAV_ITEMS.find((item) => item.href === `/${hash}`)?.label ?? "About"
-          : null;
+  let activeLabel: string | null;
+  switch (true) {
+    case pathname === "/" && hash === "#about":
+      activeLabel = "About";
+      break;
+    case pathname === "/" && hash === "#events":
+      activeLabel = "Events";
+      break;
+    case pathname === "/" && hash === "#articles":
+      activeLabel = "Articles";
+      break;
+    case pathname === "/" && hash === "#join":
+      activeLabel = "Join";
+      break;
+    case pathname === "/team":
+      activeLabel = "Team";
+      break;
+    case pathname === "/" && (hash === "" || hash === "#"):
+      activeLabel = "Home";
+      break;
+    default:
+      activeLabel = null;
+  }
 
   return (
     <nav className="group fixed left-4 top-4 z-50">
@@ -114,6 +129,7 @@ function Nav() {
         {/* Navigation links */}
         <div
           className="
+            -mt-1.5
             ml-5
             flex flex-col gap-2.5
             opacity-0 
@@ -129,7 +145,7 @@ function Nav() {
               className={[
                 "inline-flex items-center gap-2 whitespace-nowrap",
                 "font-sans font-bold",
-                "text-3xl font-normal leading-[1]",
+                "text-[1.625rem] font-normal leading-[1]",
                 "text-neutral-50 no-underline",
                 "transition-transform duration-200 ease-in-out",
                 "hover:translate-x-1",
