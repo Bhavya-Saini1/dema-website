@@ -4,7 +4,7 @@ import { social } from "@/lib/social";
 const FOOTER_LINKS = [
   { href: "/#about", label: "About" },
   { href: "/team", label: "Team" },
-  { href: "/#events", label: "Events" },
+  { href: "/events", label: "Events" },
   { href: "/#articles", label: "Articles" },
   { href: "/#join", label: "Join" },
 ] as const;

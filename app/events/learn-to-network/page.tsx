@@ -17,7 +17,7 @@ export default function LearnToNetworkPage() {
       <section className="px-6 py-16 md:px-12 lg:px-16 lg:py-24">
         <div className="mx-auto max-w-7xl">
           <Link
-            href="/#events"
+            href="/events"
             className="font-mono text-xs font-bold uppercase tracking-widest text-navy transition-colors duration-150 hover:text-red"
           >
             All events
