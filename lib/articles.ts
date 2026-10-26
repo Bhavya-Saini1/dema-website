@@ -11,7 +11,7 @@ export type Article = {
   title: string;
   date: string;
   dateLabel: string;
-  topic: string;
+  topic: Topic;
   dek: string;
   authors: string[];
   sourceUrl: string;
@@ -231,3 +231,31 @@ export function getFeaturedArticle() {
 export function getIndexArticles() {
   return articles.slice(1);
 }
+
+// Demi PR1 Work 
+
+// Topic types are now locked to a fixed list of allowed values, which helps catch typos and near-duplicates in the codebase.
+// using as const to lock the list so TypeScript knows the exact allowed words (fixed choice menu)
+// TypeScript will throw an error if you try to assign a value to `topic` that is not in this list.
+export const TOPICS = [
+  "Technology", 
+  "Business", 
+  "DEMA Alumni", 
+  "Artificial Intelligence",
+  "Digital Media",
+  "Internships",
+  "GenZ", 
+  "Student Growth", 
+  "AI Skills",
+] as const;
+export type Topic = (typeof TOPICS)[number];
+
+// Sorting the articles to newest first order 
+export function getPublishedArticles(): Article[] {
+  return [...articles].sort((a, b) => {
+    const byDate = b.date.localeCompare(a.date);
+    if (byDate !== 0) return byDate; 
+    return 0;
+  }); 
+}
+
