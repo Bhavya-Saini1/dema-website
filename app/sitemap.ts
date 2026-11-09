@@ -1,6 +1,13 @@
 import type { MetadataRoute } from "next";
 import { articles } from "@/lib/articles";
-import { demSoiree, nextEvent } from "@/lib/next-event";
+import {
+  bakeSale,
+  cmlCaseCompetition,
+  demSoiree,
+  learnToNetwork,
+  redBullWingsClub,
+  yecWorkshop,
+} from "@/lib/next-event";
 import { siteUrl } from "@/lib/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -9,6 +16,20 @@ export default function sitemap(): MetadataRoute.Sitemap {
     lastModified: article.date,
     changeFrequency: "monthly" as const,
     priority: 0.7,
+  }));
+
+  const eventEntries = [
+    redBullWingsClub,
+    yecWorkshop,
+    cmlCaseCompetition,
+    learnToNetwork,
+    bakeSale,
+    demSoiree,
+  ].map((event, index) => ({
+    url: `${siteUrl}${event.href}`,
+    lastModified: new Date(),
+    changeFrequency: "weekly" as const,
+    priority: index < 3 ? 0.9 : 0.6,
   }));
 
   return [
@@ -24,18 +45,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.8,
     },
-    {
-      url: `${siteUrl}${nextEvent.href}`,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 0.9,
-    },
-    {
-      url: `${siteUrl}${demSoiree.href}`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.6,
-    },
+    ...eventEntries,
     ...articleEntries,
   ];
 }

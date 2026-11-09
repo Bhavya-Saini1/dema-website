@@ -279,21 +279,6 @@ export default function DemSoireePage() {
                   Take the survey
                 </a>
               </div>
-              <div className="border-l-2 border-navy pl-5">
-                <h3 className="text-lg font-bold text-navy">Join the team</h3>
-                <p className="mt-1 text-base font-light leading-relaxed text-navy">
-                  Round 2 hiring is coming up, with roles across several
-                  departments.
-                </p>
-                <a
-                  href={demSoiree.hiringHref}
-                  target="_blank"
-                  rel="noreferrer"
-                  className={`mt-4 ${buttonNavy}`}
-                >
-                  Apply for Round 2
-                </a>
-              </div>
             </div>
           </div>
         </div>

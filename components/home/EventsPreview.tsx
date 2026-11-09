@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import ParallaxMedia from "@/components/ui/ParallaxMedia";
-import { demSoiree } from "@/lib/next-event";
+import { bakeSale, demSoiree, learnToNetwork } from "@/lib/next-event";
 
 export default function EventsPreview() {
   return (
@@ -38,48 +38,74 @@ export default function EventsPreview() {
               href={demSoiree.href}
               className="mt-6 inline-block rounded-none border border-neutral-50 px-4 py-2 font-mono text-xs font-bold uppercase tracking-widest text-neutral-50 transition-colors duration-150 hover:border-red hover:bg-red"
             >
-              Details
+              Recap
             </Link>
           </div>
         </article>
 
         <div className="flex flex-col gap-8 lg:col-span-5 lg:h-full">
-          <article className="flex flex-1 flex-col rounded-none border border-navy bg-[#1A3A5C] p-8 text-neutral-50">
-            <time
-              dateTime="2026-02-04"
-              className="font-mono text-xs font-bold tracking-widest text-neutral-50"
-            >
-              04 FEB 2026
-            </time>
-            <h3 className="mt-5 font-sans text-2xl font-bold leading-snug tracking-tight">
-              TechTrack 2026
-            </h3>
-            <p className="mt-3 text-base font-light leading-relaxed">
-              Hosted by DEMA with ISACA Toronto Chapter, Seneca Polytechnic,
-              Toronto Metropolitan University, and York University. Cybersecurity,
-              cloud, analytics, and governance, with industry speakers and
-              networking.
-            </p>
-          </article>
-
-          <article className="flex flex-1 flex-col rounded-none border border-navy bg-neutral-100">
-            <div className="h-[4px] w-full bg-red" />
+          <article className="relative flex flex-1 flex-col overflow-hidden rounded-none border border-navy bg-[#1A3A5C] text-neutral-50">
+            <div className="relative h-40 shrink-0">
+              <Image
+                src={learnToNetwork.image}
+                alt={learnToNetwork.imageAlt}
+                fill
+                sizes="(min-width: 1024px) 40vw, 100vw"
+                className="object-cover"
+              />
+            </div>
             <div className="flex flex-1 flex-col p-8">
               <time
-                dateTime="2026-04-08"
+                dateTime="2026-10-14"
+                className="font-mono text-xs font-bold tracking-widest text-neutral-50"
+              >
+                {learnToNetwork.dateLabel}
+              </time>
+              <h3 className="mt-5 font-sans text-2xl font-bold leading-snug tracking-tight">
+                {learnToNetwork.name}
+              </h3>
+              <p className="mt-3 text-base font-light leading-relaxed">
+                {learnToNetwork.blurb}
+              </p>
+              <Link
+                href={learnToNetwork.href}
+                className="mt-6 inline-block self-start rounded-none border border-neutral-50 px-4 py-2 font-mono text-xs font-bold uppercase tracking-widest text-neutral-50 transition-colors duration-150 hover:border-red hover:bg-red"
+              >
+                Recap
+              </Link>
+            </div>
+          </article>
+
+          <article className="relative flex flex-1 flex-col overflow-hidden rounded-none border border-navy bg-neutral-100">
+            <div className="h-[4px] w-full bg-red" />
+            <div className="relative h-40 shrink-0">
+              <Image
+                src={bakeSale.image}
+                alt={bakeSale.imageAlt}
+                fill
+                sizes="(min-width: 1024px) 40vw, 100vw"
+                className="object-cover"
+              />
+            </div>
+            <div className="flex flex-1 flex-col p-8">
+              <time
+                dateTime="2026-10-19"
                 className="font-mono text-xs font-bold tracking-widest text-red"
               >
-                08 APR 2026
+                {bakeSale.dateLabel}
               </time>
               <h3 className="mt-5 font-sans text-2xl font-bold leading-snug tracking-tight text-navy">
-                DEM Case Competition
+                {bakeSale.name}
               </h3>
               <p className="mt-3 text-base font-light leading-relaxed text-navy">
-                CCT 2150, 10:00 AM to 4:00 PM. DEM students competed in teams
-                of 2 to 4. UTM community members attended as general audience.
-                ICCIT students volunteered on logistics. Sign-up deadline was 25
-                Mar.
+                {bakeSale.blurb}
               </p>
+              <Link
+                href={bakeSale.href}
+                className="mt-6 inline-block self-start rounded-none border border-navy px-4 py-2 font-mono text-xs font-bold uppercase tracking-widest text-navy transition-colors duration-150 hover:border-red hover:text-red"
+              >
+                Recap
+              </Link>
             </div>
           </article>
         </div>

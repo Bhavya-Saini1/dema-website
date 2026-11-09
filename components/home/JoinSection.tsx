@@ -45,14 +45,13 @@ export default function JoinSection() {
               <>
                 <div className="lg:col-span-8">
                   <p className="font-mono text-[0.65rem] font-bold uppercase tracking-[0.18em] text-red">
-                    Open · Round 2
+                    Open
                   </p>
                   <h3 className="mt-3 font-sans text-3xl font-bold leading-snug text-navy md:text-4xl">
                     Associate
                   </h3>
                   <p className="mt-4 max-w-xl text-base font-light leading-relaxed text-navy">
-                    Round 2 hiring for the 2026-2027 team, with roles across
-                    several departments.
+                    Associate roles across several departments.
                   </p>
                 </div>
                 <div className="lg:col-span-4 lg:flex lg:justify-end lg:pb-1">
@@ -62,7 +61,7 @@ export default function JoinSection() {
                     rel="noreferrer"
                     className="inline-block rounded-none border border-red bg-red px-6 py-3 font-mono text-xs font-bold uppercase tracking-widest text-neutral-50 transition-colors duration-150 hover:border-red-dark hover:bg-red-dark"
                   >
-                    Apply for Round 2
+                    Application
                   </a>
                 </div>
               </>
@@ -76,7 +75,8 @@ export default function JoinSection() {
                     Associate
                   </h3>
                   <p className="mt-4 max-w-xl text-base font-light leading-relaxed text-navy">
-                    Hiring for the 2026-2027 team. This form is closed. Watch{" "}
+                    The 2026-2027 associate team is set. Hiring opens again next
+                    year. Watch{" "}
                     <a
                       href={social.instagram}
                       target="_blank"
@@ -94,7 +94,7 @@ export default function JoinSection() {
                     >
                       LinkedIn
                     </a>{" "}
-                    for the next round.
+                    for updates.
                   </p>
                 </div>
                 <div className="lg:col-span-4 lg:flex lg:justify-end lg:pb-1">

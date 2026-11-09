@@ -144,10 +144,10 @@ export default function ArticlePage({ params }: ArticlePageProps) {
       <article className="px-6 py-14 md:px-12 lg:py-20">
         <div className="mx-auto max-w-3xl">
           <Link
-            href="/#articles"
+            href="/#demalogue"
             className="font-mono text-xs font-bold uppercase tracking-widest text-navy transition-colors duration-150 hover:text-red"
           >
-            Articles
+            Demalogue
           </Link>
 
           <p className="mt-8 font-mono text-[0.65rem] font-bold uppercase tracking-[0.2em] text-red">

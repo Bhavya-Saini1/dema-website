@@ -1,10 +1,45 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 import EventCountdown from "@/components/home/EventCountdown";
 import ParallaxMedia from "@/components/ui/ParallaxMedia";
-import { nextEvent } from "@/lib/next-event";
+import {
+  getNextEvent,
+  type UpcomingEvent,
+} from "@/lib/next-event";
 
 export default function NextEvent() {
+  const [event, setEvent] = useState<UpcomingEvent | null>(() =>
+    getNextEvent(),
+  );
+
+  useEffect(() => {
+    const refresh = () => setEvent(getNextEvent());
+    refresh();
+    const id = window.setInterval(refresh, 1000);
+    return () => window.clearInterval(id);
+  }, []);
+
+  if (!event) {
+    return (
+      <aside className="lg:col-span-5 lg:col-start-8 lg:-ml-4">
+        <p className="font-mono text-[0.65rem] font-bold uppercase tracking-[0.22em] text-red">
+          Next event
+        </p>
+        <div className="relative mt-3 border border-navy bg-neutral-50 p-6">
+          <p className="font-mono text-xs font-bold tracking-widest text-navy">
+            Event recap soon!
+          </p>
+          <p className="mt-3 text-sm font-light leading-relaxed text-navy">
+            Watch this space for the next DEMA event.
+          </p>
+        </div>
+      </aside>
+    );
+  }
+
   return (
     <aside className="lg:col-span-5 lg:col-start-8 lg:-ml-4">
       <p className="font-mono text-[0.65rem] font-bold uppercase tracking-[0.22em] text-red">
@@ -18,11 +53,17 @@ export default function NextEvent() {
         />
         <ParallaxMedia className="clip-chevron-tr relative rounded-none border border-navy">
           <Image
-            src={nextEvent.image}
-            alt={nextEvent.imageAlt}
+            src={event.image}
+            alt={event.imageAlt}
             width={1600}
             height={1000}
-            className="aspect-[16/10] h-auto w-full object-cover object-center"
+            className={`aspect-[16/10] h-auto w-full object-cover ${
+              event.slug === "red-bull-wings-club" ||
+              event.slug === "yec-workshop" ||
+              event.slug === "cml-case-competition"
+                ? "object-top"
+                : "object-center"
+            }`}
             priority
           />
         </ParallaxMedia>
@@ -31,27 +72,27 @@ export default function NextEvent() {
       <div className="relative z-10 -mt-6 mr-4 border border-navy bg-neutral-50 p-4 md:mr-6">
         <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
           <time
-            dateTime={nextEvent.startsAt}
+            dateTime={event.startsAt}
             className="font-mono text-xs font-bold tracking-widest text-navy"
           >
-            {nextEvent.dateLabel}
+            {event.dateLabel}
           </time>
           <EventCountdown
-            startsAt={nextEvent.startsAt}
-            dateLabel={nextEvent.dateLabel}
-            timeLabel={nextEvent.timeLabel}
+            startsAt={event.startsAt}
+            dateLabel={event.dateLabel}
+            timeLabel={event.timeLabel}
             compact
           />
         </div>
         <h2 className="mt-3 font-sans text-xl font-bold leading-tight tracking-tight text-navy md:text-2xl">
-          {nextEvent.name}
+          {event.name}
         </h2>
         <p className="mt-1 text-sm font-light text-navy">
-          {nextEvent.place} · {nextEvent.timeLabel}
+          {event.place} · {event.timeLabel}
         </p>
         <div className="mt-4 flex flex-wrap gap-2">
           <a
-            href={nextEvent.rsvpHref}
+            href={event.rsvpHref}
             target="_blank"
             rel="noreferrer"
             className="inline-block rounded-none border border-red bg-red px-4 py-2 font-mono text-xs font-bold uppercase tracking-widest text-neutral-50 transition-colors duration-150 hover:border-red-dark hover:bg-red-dark"
@@ -59,7 +100,7 @@ export default function NextEvent() {
             RSVP
           </a>
           <Link
-            href={nextEvent.href}
+            href={event.href}
             className="inline-block rounded-none border border-navy px-4 py-2 font-mono text-xs font-bold uppercase tracking-widest text-navy transition-colors duration-150 hover:border-red hover:text-red"
           >
             Details

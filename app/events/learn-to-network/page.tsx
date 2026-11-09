@@ -1,14 +1,13 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import EventCountdown from "@/components/home/EventCountdown";
 import ParallaxMedia from "@/components/ui/ParallaxMedia";
 import { learnToNetwork } from "@/lib/next-event";
 
 export const metadata: Metadata = {
-  title: learnToNetwork.name,
+  title: `${learnToNetwork.name} recap`,
   description:
-    "Learn to Network with DEMA and the UTM Career Centre, facilitated by Lucille Yi. Wednesday 14 October, 6:00 to 7:30 PM in DV 3140. Open to all UTM students. Seats are limited.",
+    "Recap of Learn to Network with DEMA and the UTM Career Centre. Wednesday 14 October 2026 in DV 3140 with Lucille Yi.",
 };
 
 export default function LearnToNetworkPage() {
@@ -26,41 +25,24 @@ export default function LearnToNetworkPage() {
           <div className="mt-6 grid grid-cols-1 items-start gap-10 lg:grid-cols-12 lg:gap-x-10">
             <div className="lg:col-span-7">
               <p className="font-mono text-xs font-bold uppercase tracking-[0.2em] text-red">
-                DEMA x UTM Career Centre
+                Recap · DEMA x UTM Career Centre
               </p>
               <h1 className="mt-4 font-sans text-4xl font-bold leading-[0.95] tracking-tight text-navy md:text-6xl">
                 {learnToNetwork.name}
               </h1>
-              <p className="mt-6 text-lg font-light leading-relaxed text-neutral-600">
-                Your network starts with a conversation. Learn to Network is
-                back: an interactive session with Lucille Yi from the UTM
-                Career Centre on how to start professional conversations and
-                keep them going. Wednesday 14 October, 6:00 to 7:30 PM in DV
-                3140. Open to all UTM students. Seats are limited, so register
-                first.
+              <p className="mt-6 max-w-2xl text-2xl font-bold leading-snug text-navy md:text-3xl">
+                A little networking goes a long way.
               </p>
-              <a
-                href={learnToNetwork.rsvpHref}
-                target="_blank"
-                rel="noreferrer"
-                className="mt-8 inline-block rounded-none border border-red bg-red px-6 py-3 font-mono text-xs font-bold uppercase tracking-widest text-neutral-50 transition-colors duration-150 hover:border-red-dark hover:bg-red-dark"
-              >
-                Register
-              </a>
+              <p className="mt-6 max-w-2xl text-lg font-light leading-relaxed text-neutral-600">
+                Thank you to everyone who joined us for our Learn to Network
+                collab with the Career Centre. From building confidence to
+                making real connections, we loved seeing people step out of
+                their comfort zones and grow their professional skills.
+              </p>
             </div>
 
             <div className="border border-navy bg-neutral-50 p-6 lg:col-span-5">
-              <p className="font-mono text-[0.65rem] font-bold uppercase tracking-[0.2em] text-red">
-                Until start
-              </p>
-              <div className="mt-3">
-                <EventCountdown
-                  startsAt={learnToNetwork.startsAt}
-                  dateLabel={learnToNetwork.dateLabel}
-                  timeLabel={learnToNetwork.timeLabel}
-                />
-              </div>
-              <dl className="mt-8 space-y-5">
+              <dl className="space-y-5">
                 <div>
                   <dt className="font-mono text-[0.65rem] font-bold uppercase tracking-[0.2em] text-neutral-500">
                     When
@@ -81,6 +63,14 @@ export default function LearnToNetworkPage() {
                     {learnToNetwork.roomHint}
                   </dd>
                 </div>
+                <div>
+                  <dt className="font-mono text-[0.65rem] font-bold uppercase tracking-[0.2em] text-neutral-500">
+                    With
+                  </dt>
+                  <dd className="mt-1 text-base font-light text-navy">
+                    Lucille Yi · UTM Career Centre
+                  </dd>
+                </div>
               </dl>
             </div>
 
@@ -94,7 +84,7 @@ export default function LearnToNetworkPage() {
                   src={learnToNetwork.image}
                   alt={learnToNetwork.imageAlt}
                   width={1024}
-                  height={664}
+                  height={736}
                   className="aspect-[16/10] h-auto w-full object-cover object-center"
                   priority
                 />
@@ -108,13 +98,12 @@ export default function LearnToNetworkPage() {
         <div className="mx-auto grid max-w-7xl grid-cols-1 gap-12 lg:grid-cols-12">
           <div className="lg:col-span-6">
             <h2 className="font-sans text-2xl font-bold tracking-tight text-navy">
-              What to expect
+              Looking back
             </h2>
             <p className="mt-4 text-base font-light leading-relaxed text-navy">
-              For students getting ready to meet employers, heading to their
-              first networking event, or who want to get better at talking to
-              people in their field. You get a networking strategy that works,
-              then put it into practice in the room. Come ready to talk.
+              Students practiced how to start professional conversations and
+              keep them going. A big thank you to Lucille and the Career Centre
+              for bringing this event to DEMA.
             </p>
           </div>
           <div className="lg:col-span-5 lg:col-start-8">
@@ -132,7 +121,7 @@ export default function LearnToNetworkPage() {
                 Open to all UTM students
               </li>
               <li className="border-l-2 border-navy pl-4">
-                Limited seats · register in advance
+                Facilitated by Lucille Yi, UTM Career Centre
               </li>
             </ul>
           </div>
@@ -146,11 +135,11 @@ export default function LearnToNetworkPage() {
               Meet the facilitator
             </h2>
             <p className="mt-4 text-base font-light leading-relaxed text-navy">
-              Lucille Yi is an Employment Strategist – International at the
-              UTM Career Centre. She draws on past work in government,
-              non-profit, and recruiting to help international and domestic
-              students find jobs in Canada and abroad. She has worked in China,
-              Türkiye, and Canada.
+              Lucille Yi is an Employment Strategist – International at the UTM
+              Career Centre. She draws on past work in government, non-profit,
+              and recruiting to help international and domestic students find
+              jobs in Canada and abroad. She has worked in China, Türkiye, and
+              Canada.
             </p>
           </div>
           <div className="relative pb-2 pr-2 lg:col-span-6 lg:col-start-7">
@@ -162,7 +151,7 @@ export default function LearnToNetworkPage() {
               src="/events/learn-to-network/facilitator-speaking.jpg"
               alt="Lucille Yi speaking at the podium during Learn to Network"
               width={1024}
-              height={682}
+              height={778}
               sizes="(min-width: 1024px) 45vw, 100vw"
               className="relative aspect-[3/2] h-auto w-full rounded-none border border-navy object-cover"
             />
@@ -173,24 +162,27 @@ export default function LearnToNetworkPage() {
       <section className="px-6 pb-24 md:px-12 lg:px-16">
         <div className="mx-auto max-w-7xl">
           <h2 className="font-sans text-2xl font-bold tracking-tight text-navy">
-            From last year
+            From the night
           </h2>
+          <p className="mt-3 max-w-2xl text-base font-light leading-relaxed text-navy">
+            A look back at the connections, conversations, and memories we made.
+          </p>
           <div className="mt-6 grid grid-cols-1 gap-6 md:grid-cols-12">
             <Image
               src="/events/learn-to-network/group.jpg"
-              alt="Students and the DEMA team after last year's Learn to Network session"
+              alt="Students and the DEMA team after Learn to Network"
               width={1024}
-              height={654}
+              height={736}
               sizes="(min-width: 768px) 66vw, 100vw"
               className="aspect-[4/3] h-auto w-full rounded-none border border-navy object-cover md:col-span-8"
             />
             <Image
-              src="/events/learn-to-network/title-slide.jpg"
-              alt="Learn to Network title slide on the projector screen"
-              width={768}
-              height={1024}
+              src="/events/learn-to-network/facilitator-speaking.jpg"
+              alt="Lucille Yi presenting Where Can You Network at Learn to Network"
+              width={1024}
+              height={778}
               sizes="(min-width: 768px) 33vw, 100vw"
-              className="aspect-[3/4] h-auto w-full rounded-none border border-navy object-cover md:col-span-4 md:aspect-auto md:h-full"
+              className="aspect-[3/4] h-auto w-full rounded-none border border-navy object-cover object-top md:col-span-4 md:aspect-auto md:h-full"
             />
           </div>
         </div>

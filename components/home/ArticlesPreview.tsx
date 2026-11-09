@@ -7,11 +7,11 @@ export default function ArticlesPreview() {
   const index = getIndexArticles();
 
   return (
-    <section id="articles" className="px-6 py-24 md:px-12 lg:px-16">
+    <section id="demalogue" className="px-6 py-24 md:px-12 lg:px-16">
       <div className="mx-auto max-w-7xl">
         <div className="flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
           <h2 className="font-sans text-5xl font-light leading-[0.9] tracking-tight text-navy md:text-6xl lg:text-7xl">
-            Articles
+            Demalogue
           </h2>
           <a
             href="https://dema-logue.beehiiv.com/subscribe"

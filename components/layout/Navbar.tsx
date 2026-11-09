@@ -7,7 +7,7 @@ import Logo from "@/components/ui/Logo";
 const NAV_LINKS = [
   { href: "/#about", label: "About" },
   { href: "/#events", label: "Events" },
-  { href: "/#articles", label: "Articles" },
+  { href: "/#demalogue", label: "Demalogue" },
   { href: "/#join", label: "Join" },
 ] as const;
 
