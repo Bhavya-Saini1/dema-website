@@ -21,6 +21,30 @@ export type Article = {
 
 export const articles: Article[] = [
   {
+    slug: "dema-2026-soiree-bridging-students-and-professionals-together-with-pizza",
+    title: "DEMA’s 2026 Soiree: Bridging students and professionals together (with pizza)",
+    date: "2026-09-30",
+    dateLabel: "30 SEP 2026",
+    topic: "DEMA Community",
+    dek: "Recapping DEMA's annual Soiree, a networking event that brought together students and professionals in the tech industry for an evening of connections and learning.",
+    authors: ["DEMALOGUE", "Sabine Jalil"],
+    sourceUrl: "https://dema-logue.beehiiv.com/",
+    coverImage: { src: "/articles/soiree/image1.png", alt: "Cover image for DEMA’s 2026 Soiree article on DEMALOGUE" },
+    body: [
+      { type: "p", text: "“DEMA is for everyone.” This opening remark by President Vaibhav Kaushal sent a clear message about what was in store for DEMA this year, and with them, set the stage for an evening that sought to showcase these exact promises in full display." },
+      { type: "p", text: "With a lineup of incredible panelists & guests from Microsoft, Aramco, Deloitte, UofT, and many more prestigious organizations, the room was awash with a wealth of career advice from these seasoned professionals who had built up careers in tech, marketing, communications and across the corporate world. Led by VP Internal Brayden Messier and VP External Allina Malik, the DEM Association’s opening event of the year emphasized the diversity of the backgrounds and fields which DEMA represented."},
+      { type: "h2", text: "Commentator Highlights"},
+      { type: "p", text: "Panelists and industry reps shared stories of having slow career starts, changing industries, and staying motivated in a competitive job market. Abdul Khawaja (Cloud Solutions Architect at Microsoft) noted, “My friends were already getting big internships in 1st and 2nd year, while I was going door to door selling phone plans. You have to forge your own path, figure out what that looks like for you, and not be too focused on what others are doing.”"},
+      { type: "image", src: "/articles/soiree/panel.png", alt: "Panelists at the DEMA Soiree"},
+      { type: "p", text: "Panelist Virginie Pontruche, who studied communications, spoke primarily about the importance of curiosity - she likened her job to that of a ‘translator’, bridging the gap between the needs of executives, and the needs of consumers at Microsoft. She highlighted the importance of knowing how to ‘speak their language’, when communicating with employees and executives across multi-layered departments in a corporate setting. Building on this perspective, Adnan Bashir, a graduate of CCIT, supported her point strongly - he emphasized the growing importance of the need to know how to convey the importance of a problem or the efficacy of an idea to executives, a skill of communication that requires more than just technical know-how."},
+      { type: "p", text: "“Don’t have a what if, just try it,” commented Tabrez Jeshani, a Resource Manager at Microsoft. “Open yourself up to challenges.” The sentiment was echoed by all panelists as they shared their career stories, and became a key point of discussion amongst community members as they voiced their own fears and concerns with these guests during the networking portion of the soiree. When asked what he wished he could tell his undergrad self, he remarked that he would’ve told his undergrad self to take stock of the opportunities around him - to leverage the university experience to learn how to present, how to speak in front of a crowd. “Microsoft is the 10th company I’ve worked for,” Jeshani confessed. “I learnt to get comfortable with being uncomfortable.”"},
+      { type: "p", text: "During the speed networking round, students got the chance to speak one-on-one with the panelists and industry guests, who imparted stories & career lessons from their own job-hunting experiences. When asked about what students can do now to make themselves stand out - which was the most asked question of the night - one industry rep, Liam Brooks (a consultant at Deloitte) noted, “We do want to see good grades - but that’s only one part of the story. Mostly we want to see who you are as a person, what projects or activities have you led, and what kinds of transferable skills have you developed from those non-professional experiences.”"},
+      { type: "h2", text: "Conclusion"},
+      { type: "p", text: "“Take risks, and put yourself out there.” These closing summary remarks by VP Brayden Messier brought the night to a close. DEMA 2026 Soiree sought to emphasize the importance of putting yourself out there as part of the work of building a career. Through bringing together students and professionals, the Soiree exemplified what DEMA does best - making networking a less daunting experience by helping students across diverse backgrounds explore careers in business and tech through community."},
+      { type: "image", src: "/articles/soiree/table.png", alt: "Table setup at the DEMA Soiree" },
+    ]
+  },
+  {
     slug: "the-saaspocalypse-why-software-stocks-fell-and-what-it-means-for-how-we-pay-for-software",
     title: "The \"SaaSpocalypse\": Why software stocks fell and what it means for how we pay for software",
     date: "2026-02-28",
