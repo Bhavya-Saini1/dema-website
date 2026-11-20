@@ -134,6 +134,7 @@ export const upcomingEvents: readonly UpcomingEvent[] = [
 export function getNextEvent(now = Date.now()): UpcomingEvent | null {
   return (
     upcomingEvents.find((event) => new Date(event.startsAt).getTime() > now) ??
+    upcomingEvents[upcomingEvents.length - 1] ??
     null
   );
 }
