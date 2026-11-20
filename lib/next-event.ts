@@ -117,7 +117,7 @@ export const cmlCaseCompetition = {
   timeLabel: "5:00 PM – 7:00 PM",
   place: "CC 2150",
   roomHint: "University of Toronto Mississauga",
-  image: "/events/cml-case-competition/poster.jpg",
+  image: "/events/cml-case-competition/poster-card.webp",
   imageAlt:
     "DEMA x CML Case Competition promotional poster with city skyline",
   blurb:

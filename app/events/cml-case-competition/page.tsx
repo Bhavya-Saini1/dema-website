@@ -92,10 +92,13 @@ export default function CmlCaseCompetitionPage() {
                 <Image
                   src={cmlCaseCompetition.image}
                   alt={cmlCaseCompetition.imageAlt}
-                  width={820}
-                  height={1024}
+                  width={1200}
+                  height={750}
+                  sizes="(min-width: 1024px) 80vw, 100vw"
+                  quality={70}
                   className="aspect-[16/10] h-auto w-full object-cover object-top"
                   priority
+                  fetchPriority="high"
                 />
               </ParallaxMedia>
             </div>

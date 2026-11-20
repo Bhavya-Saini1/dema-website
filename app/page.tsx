@@ -2,6 +2,7 @@ import ArticlesPreview from "@/components/home/ArticlesPreview";
 import EventsPreview from "@/components/home/EventsPreview";
 import JoinSection from "@/components/home/JoinSection";
 import NextEvent from "@/components/home/NextEvent";
+import { getNextEvent } from "@/lib/next-event";
 import { social } from "@/lib/social";
 
 const MARQUEE_PHRASE = "BUSINESS • TECHNOLOGY • DESIGN • INNOVATION •";
@@ -74,8 +75,13 @@ function MarqueeCopy() {
 }
 
 export default function Home() {
+  const nextEvent = getNextEvent();
+
   return (
     <main>
+      {nextEvent ? (
+        <link rel="preload" as="image" href={nextEvent.image} />
+      ) : null}
       <section className="px-6 py-24 md:px-12 lg:px-16 lg:py-32">
         <div className="mx-auto grid max-w-7xl grid-cols-1 items-start gap-16 lg:grid-cols-12 lg:gap-8">
           <header className="lg:col-span-7">

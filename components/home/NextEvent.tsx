@@ -55,8 +55,10 @@ export default function NextEvent() {
           <Image
             src={event.image}
             alt={event.imageAlt}
-            width={1600}
-            height={1000}
+            width={event.slug === "cml-case-competition" ? 1200 : 960}
+            height={event.slug === "cml-case-competition" ? 750 : 600}
+            sizes="(min-width: 1024px) 40vw, 92vw"
+            quality={event.slug === "cml-case-competition" ? 70 : 75}
             className={`aspect-[16/10] h-auto w-full object-cover ${
               event.slug === "red-bull-wings-club" ||
               event.slug === "yec-workshop" ||
@@ -65,6 +67,7 @@ export default function NextEvent() {
                 : "object-center"
             }`}
             priority
+            fetchPriority="high"
           />
         </ParallaxMedia>
       </div>
